@@ -1,4 +1,4 @@
-package idea.plugins.salesforce.file.filetypes;
+package idea.plugins.salesforce.file.types;
 
 import com.intellij.openapi.fileTypes.FileType;
 import com.intellij.openapi.vfs.CharsetToolkit;
@@ -8,8 +8,8 @@ import org.jetbrains.annotations.Nullable;
 
 import javax.swing.*;
 
-public class VisualforcePageFileType implements FileType {
-    public static final VisualforcePageFileType INSTANCE = new VisualforcePageFileType();
+public class VisualforceComponentFileType implements FileType {
+    public static final VisualforceComponentFileType INSTANCE = new VisualforceComponentFileType();
     /**
      * Returns the name of the file type. The name must be unique among all file types registered in the system.
      *
@@ -18,7 +18,7 @@ public class VisualforcePageFileType implements FileType {
     @NotNull
     @Override
     public String getName() {
-        return "Visualforce Page";  //To change body of implemented methods use File | Settings | File Templates.
+        return "Visualforce Component";  //To change body of implemented methods use File | Settings | File Templates.
     }
 
     /**
@@ -29,7 +29,7 @@ public class VisualforcePageFileType implements FileType {
     @NotNull
     @Override
     public String getDescription() {
-        return "Salesforce Visualforce Page";  //To change body of implemented methods use File | Settings | File Templates.
+        return "Salesforce Visualforce Component";  //To change body of implemented methods use File | Settings | File Templates.
     }
 
     /**
@@ -40,7 +40,7 @@ public class VisualforcePageFileType implements FileType {
     @NotNull
     @Override
     public String getDefaultExtension() {
-        return "visualforcePage";  //To change body of implemented methods use File | Settings | File Templates.
+        return "visualforceComponent";  //To change body of implemented methods use File | Settings | File Templates.
     }
 
     /**

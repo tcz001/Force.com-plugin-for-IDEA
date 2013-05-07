@@ -1,8 +1,8 @@
-package idea.plugins.salesforce.file.filetypeFactories;
+package idea.plugins.salesforce.file.typeFactories;
 
 import com.intellij.openapi.fileTypes.FileTypeConsumer;
 import com.intellij.openapi.fileTypes.FileTypeFactory;
-import idea.plugins.salesforce.file.filetypes.VisualforceComponentFileType;
+import idea.plugins.salesforce.file.types.VisualforceComponentFileType;
 import org.jetbrains.annotations.NotNull;
 
 /**
