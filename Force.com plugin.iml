@@ -8,6 +8,8 @@
     </content>
     <orderEntry type="inheritedJdk" />
     <orderEntry type="sourceFolder" forTests="false" />
+    <orderEntry type="library" name="salesforce_metadata" level="project" />
+    <orderEntry type="library" name="wsc" level="project" />
   </component>
 </module>
 
