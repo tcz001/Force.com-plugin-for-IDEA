@@ -1,4 +1,4 @@
-package idea.plugins.salesforce.filetypes;
+package idea.plugins.salesforce.file.filetypes;
 
 import com.intellij.openapi.fileTypes.FileType;
 import com.intellij.openapi.vfs.CharsetToolkit;
@@ -9,6 +9,7 @@ import org.jetbrains.annotations.Nullable;
 import javax.swing.*;
 
 public class ApexClassFileType implements FileType {
+    public static final ApexClassFileType INSTANCE = new ApexClassFileType();
     /**
      * Returns the name of the file type. The name must be unique among all file types registered in the system.
      *
