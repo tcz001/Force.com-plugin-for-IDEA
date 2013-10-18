@@ -1,4 +1,4 @@
-package idea.plugins.salesforce.file.typeFactories;
+package idea.plugins.salesforce.typeFactories;
 
 import com.intellij.openapi.fileTypes.FileTypeConsumer;
 import com.intellij.openapi.fileTypes.FileTypeFactory;

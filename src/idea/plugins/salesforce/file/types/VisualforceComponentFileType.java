@@ -3,6 +3,7 @@ package idea.plugins.salesforce.file.types;
 import com.intellij.openapi.fileTypes.FileType;
 import com.intellij.openapi.vfs.CharsetToolkit;
 import com.intellij.openapi.vfs.VirtualFile;
+import idea.plugins.salesforce.ApexIcon;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 
@@ -51,7 +52,7 @@ public class VisualforceComponentFileType implements FileType {
     @Nullable
     @Override
     public Icon getIcon() {
-        return null;  //To change body of implemented methods use File | Settings | File Templates.
+        return ApexIcon.FILE;
     }
 
     /**

@@ -34,9 +34,9 @@
   </actions>
 
   <extensions defaultExtensionNs="com.intellij">
-    <fileTypeFactory implementation="idea.plugins.salesforce.file.typeFactories.ApexClassFileFactory"/>
-    <fileTypeFactory implementation="idea.plugins.salesforce.file.typeFactories.ApexTriggerFileFactory"/>
-    <fileTypeFactory implementation="idea.plugins.salesforce.file.typeFactories.VisualforceComponentFileFactory"/>
-    <fileTypeFactory implementation="idea.plugins.salesforce.file.typeFactories.VisualforcePageFileFactory"/>
+    <fileTypeFactory implementation="idea.plugins.salesforce.typeFactories.ApexClassFileFactory"/>
+    <fileTypeFactory implementation="idea.plugins.salesforce.typeFactories.ApexTriggerFileFactory"/>
+    <fileTypeFactory implementation="idea.plugins.salesforce.typeFactories.VisualforceComponentFileFactory"/>
+    <fileTypeFactory implementation="idea.plugins.salesforce.typeFactories.VisualforcePageFileFactory"/>
   </extensions>
 </idea-plugin>
