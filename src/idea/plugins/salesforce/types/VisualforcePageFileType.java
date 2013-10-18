@@ -1,4 +1,4 @@
-package idea.plugins.salesforce.file.types;
+package idea.plugins.salesforce.types;
 
 import com.intellij.openapi.fileTypes.FileType;
 import com.intellij.openapi.vfs.CharsetToolkit;

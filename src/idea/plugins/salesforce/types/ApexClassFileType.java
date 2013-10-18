@@ -1,4 +1,4 @@
-package idea.plugins.salesforce.file.types;
+package idea.plugins.salesforce.types;
 
 import com.intellij.openapi.fileTypes.FileType;
 import com.intellij.openapi.vfs.CharsetToolkit;
@@ -9,9 +9,8 @@ import org.jetbrains.annotations.Nullable;
 
 import javax.swing.*;
 
-
-public class ApexTriggerFileType implements FileType {
-    public static final ApexTriggerFileType INSTANCE = new ApexTriggerFileType();
+public class ApexClassFileType implements FileType {
+    public static final ApexClassFileType INSTANCE = new ApexClassFileType();
     /**
      * Returns the name of the file type. The name must be unique among all file types registered in the system.
      *
@@ -20,7 +19,7 @@ public class ApexTriggerFileType implements FileType {
     @NotNull
     @Override
     public String getName() {
-        return "Apex Trigger";  //To change body of implemented methods use File | Settings | File Templates.
+        return "Apex Class";  //To change body of implemented methods use File | Settings | File Templates.
     }
 
     /**
@@ -31,7 +30,7 @@ public class ApexTriggerFileType implements FileType {
     @NotNull
     @Override
     public String getDescription() {
-        return "Salesforce Apex Trigger";  //To change body of implemented methods use File | Settings | File Templates.
+        return "Salesforce Apex Class";  //To change body of implemented methods use File | Settings | File Templates.
     }
 
     /**
@@ -42,7 +41,7 @@ public class ApexTriggerFileType implements FileType {
     @NotNull
     @Override
     public String getDefaultExtension() {
-        return "apexTrigger";  //To change body of implemented methods use File | Settings | File Templates.
+        return "apexClass";  //To change body of implemented methods use File | Settings | File Templates.
     }
 
     /**

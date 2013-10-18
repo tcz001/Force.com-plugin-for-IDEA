@@ -1,0 +1,21 @@
+{
+  parserClass="idea.plugins.salesforce.parser.ApexParser"
+  stubParserClass="idea.plugins.salesforce.parser.GeneratedParserUtilBase"
+
+  extends="com.intellij.extapi.psi.ASTWrapperPsiElement"
+
+  psiClassPrefix="Simple"
+  psiImplClassSuffix="Impl"
+  psiPackage="idea.plugins.salesforce.psi"
+  psiImplPackage="idea.plugins.salesforce.psi.impl"
+
+  elementTypeHolderClass="idea.plugins.salesforce.psi.ApexTypes"
+  elementTypeClass="idea.plugins.salesforce.psi.ApexElementType"
+  tokenTypeClass="idea.plugins.salesforce.psi.ApexTokenType"
+}
+
+apexFile ::= item_*
+
+private item_ ::= (property|COMMENT|CRLF)
+
+property ::= (KEY? SEPARATOR VALUE?) | KEY
