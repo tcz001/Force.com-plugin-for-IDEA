@@ -4,7 +4,7 @@
 
   extends="com.intellij.extapi.psi.ASTWrapperPsiElement"
 
-  psiClassPrefix="Simple"
+  psiClassPrefix="Apex"
   psiImplClassSuffix="Impl"
   psiPackage="idea.plugins.salesforce.psi"
   psiImplPackage="idea.plugins.salesforce.psi.impl"
