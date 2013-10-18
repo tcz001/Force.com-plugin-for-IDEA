@@ -41,7 +41,7 @@ public class ApexClassFileType implements FileType {
     @NotNull
     @Override
     public String getDefaultExtension() {
-        return "apexClass";  //To change body of implemented methods use File | Settings | File Templates.
+        return "cls";  //To change body of implemented methods use File | Settings | File Templates.
     }
 
     /**

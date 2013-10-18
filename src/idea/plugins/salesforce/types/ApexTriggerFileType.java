@@ -42,7 +42,7 @@ public class ApexTriggerFileType implements FileType {
     @NotNull
     @Override
     public String getDefaultExtension() {
-        return "apexTrigger";  //To change body of implemented methods use File | Settings | File Templates.
+        return "trigger";  //To change body of implemented methods use File | Settings | File Templates.
     }
 
     /**
