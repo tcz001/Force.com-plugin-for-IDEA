@@ -12,10 +12,116 @@
   elementTypeHolderClass="idea.plugins.salesforce.psi.ApexTypes"
   elementTypeClass="idea.plugins.salesforce.psi.ApexElementType"
   tokenTypeClass="idea.plugins.salesforce.psi.ApexTokenType"
+
+  tokens=[
+      DOT = "."
+      COMMA = ","
+
+      SELECT = "SELECT"
+      FROM = "FROM"
+      WHERE = "WHERE"
+      COUNT = 'COUNT()'
+      ORDER BY = 'ORDER BY'
+      LIMIT = 'LIMIT'
+      AS = 'AS'
+      USING = 'USING'
+      AND = 'AND'
+      OR = 'OR'
+      NOT = 'NOT'
+      includes = 'includes'
+      excludes = 'excludes'
+      in = 'in'
+      not = 'not'
+      asc = 'asc'
+      desc = 'desc'
+      nulls = 'nulls'
+      first = 'first'
+      last = 'last'
+      like = 'like'
+
+      OP_PLUS         = "+"
+      OP_MINUS        = "-"
+      OP_AR_MUL       = "*"
+      OP_AR_DIV       = "/"
+      OP_EQ_EQ        = "=="
+      OP_NOT_EQ        = "!="
+      OP_DIV_EQ       = "/="
+      OP_EQ_COL_EQ    = "=:="
+      OP_EQ_DIV_EQ    = "=/="
+      OP_LT           = "<"
+      OP_EQ_LT        = "=<"
+      OP_GT           = ">"
+      OP_GT_EQ        = ">="
+      OP_LT_EQ        = "<="
+      OP_PLUS_PLUS    = "++"
+      OP_MINUS_MINUS  = "--"
+      OP_EQ           = "="
+      OP_EXL          = "!"
+      OP_LT_MINUS     = "<-"
+
+      BIN_START       = "<<"
+      BIN_END         = ">>"
+
+      PAR_LEFT        = "("
+      PAR_RIGHT       = ")"
+      CURLY_LEFT      = "{"
+      CURLY_RIGHT     = "}"
+      BRACKET_LEFT    = "["
+      BRACKET_RIGHT   = "]"
+      DOT             = "."
+      DOT_DOT         = ".."
+      DOT_DOT_DOT     = "..."
+      COLON           = ":"
+      COLON_COLON     = "::"
+      OR_OR           = "||"
+      OP_OR           = "|"
+      SEMI            = ";"
+      COMMA           = ","
+      ARROW           = "->"
+      RADIX           = "#"
+      QMARK           = "?"
+      UNI_PATTERN     = "_"
+      DQUO =  '"'
+      QUO =  "'"
+      SLASH =  '\'
+      BSLASH =  '/'
+
+      NULL = 'null'
+      TRUE = 'true'
+      FALSE = 'false'
+
+      NAME = "regexp:([a-z]|[A-Z])(_|\.|[a-z]|[A-Z])*"
+      LETTERS = "regexp:([a-z]|[A-Z])*"
+      DIGITS = "regexp:([0-9])*"
+  ]
 }
 
-apexFile ::= item_*
-
-private item_ ::= (property|COMMENT|CRLF)
-
-property ::= (KEY? SEPARATOR VALUE?) | KEY
+TEST ::= NAME | QUERY
+QUERY ::= 'SELECT' ('COUNT()' | (FIELD ( ',' FIELD)*))
+'FROM' (NAME ('AS' ?  NAME)? ('USING' NAME)?) ( ',' NAME ('AS' ? NAME)? ('USING' NAME)?)*
+('WHERE' CONDITIONEXPR )?
+('ORDER BY' ORDERBYEXPR)?
+('LIMIT' POSINTEGER )?
+FIELD ::= NAME | '(' QUERY ')'
+CONDITIONEXPR ::= ANDEXPR | OREXPR | NOTEXPR | SIMPLEEXPR
+ANDEXPR ::= 'AND' SIMPLEEXPR
+OREXPR ::= 'OR' SIMPLEEXPR
+NOTEXPR ::= 'NOT' SIMPLEEXPR
+SIMPLEEXPR ::= '(' CONDITIONEXPR ')' | FIELDEXPR | SETEXPR
+FIELDEXPR ::= NAME OPERATOR VALUE
+SETEXPR ::= ( NAME ('includes' | 'excludes' | 'in' | 'not' 'in') '(' VALUE
+   (',' VALUE)* ')' )
+ORDERBYEXPR ::= NAME ('asc' | 'desc')?  ('nulls' ('first'|'last'))? (',' NAME ('asc' | 'desc')? ('nulls' ('first'|'last'))?)*
+OPERATOR ::= '==' | '!=' | '<' | '<=' | '>' | '>=' | 'like'
+LOGICALOPERATOR ::= 'AND' | 'OR' | 'NOT'
+VALUE ::= STRING_LITERAL | NUMBER | DATE | DATETIME | NULL | TRUE | FALSE | DATEFORMULA
+DATEFORMULA ::= TODAY | TOMORROW | LAST_WEEK | THIS_WEEK | NEXT_WEEK | THIS_MONTH
+   | LAST_MONTH | NEXT_MONTH | LAST_90_DAYS | NEXT_90_DAYS | LAST_N_DAYS ':' NUMBER
+   | NEXT_N_DAYS ':' NUMBER
+//NAME ::= LETTER (NAMECHAR)*
+//NAMECHAR ::= LETTER | DIGIT | '_' | '.'
+NUMBER ::= '.' POSINTEGER | INTEGER '.' POSINTEGER
+INTEGER ::= ('+' | '-')? POSINTEGER
+POSINTEGER ::= DIGITS
+STRING_LITERAL ::= "'" LETTERS "'"
+//ESC_CHAR ::= '\n' | '\r' | '\t' | '\b' | '\f' | '"' | "'" | '\'
